@@ -1,5 +1,5 @@
-from sqlalchemy import create_engine, Column, INTEGER, FLOAT, String
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy import create_engine, Column, INTEGER, FLOAT, String, ForeignKey
+from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
 engine = create_engine('sqlite:///CarData.db', echo=False)
 engine.connect()
@@ -24,6 +24,8 @@ class Customer(Base):
     name = Column(String, nullable=False)
     number = Column(String, nullable=False)
     address = Column(String, nullable=False)
+
+    curstomers = relationship()
 
 Base.metadata.create_all(engine)
 ########################################
