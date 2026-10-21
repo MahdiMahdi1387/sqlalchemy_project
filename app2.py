@@ -44,8 +44,8 @@ sessionLocal.add_all([customer1, customer2])
 sessionLocal.commit()
 
 
-car1 = Car(brand ='Benz', model='G1 class', price = 2000, quantity =15, customer_id =1 )
-car2 = Car(brand ='BMW', model='AMG2', price = 1500, quantity =10, customer_id =1)
+car1 = Car(brand ='Benz', model='G1 class', price=2000, quantity =15, customer_id =1 )
+car2 = Car(brand ='BMW', model='AMG2', price=1500, quantity=10, customer_id=1)
 sessionLocal.add_all([car1, car2])
 sessionLocal.commit()
 
