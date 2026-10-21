@@ -9,7 +9,7 @@ Base = declarative_base()
 class Car(Base):
     __tablename__ = 'carsinfo'
 
-    id = Column(INTEGER, primary_key= True)
+    id = Column(INTEGER, primary_key=True)
     brand = Column(String, nullable=False)
     model = Column(String, nullable=False)
     price = Column(Float)
@@ -44,12 +44,12 @@ sessionLocal.add_all([customer1, customer2])
 sessionLocal.commit()
 
 
-car1 = Car(brand ='Benz', model='G1 class', price=2000, quantity =15, customer_id =1 )
+car1 = Car(brand ='Benz', model='G1 class', price=2000, quantity=15, customer_id=1 )
 car2 = Car(brand ='BMW', model='AMG2', price=1500, quantity=10, customer_id=1)
 sessionLocal.add_all([car1, car2])
 sessionLocal.commit()
 
-customer1 = sessionLocal.query(Customer).filter_by(id = 1).first()
+customer1 = sessionLocal.query(Customer).filter_by(id=1).first()
 
 # print(customer1.owner)
 for car in customer1.owner:
